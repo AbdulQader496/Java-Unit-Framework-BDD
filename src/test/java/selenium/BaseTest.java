@@ -12,6 +12,7 @@ public class BaseTest {
     protected final String PARTICULAR_TEXT_XPATH = "//*[contains(text(),'%s')]";
     protected final String RELATIVE_RESOURCE_PATH = "src/test/resources/";
 
+    //todo: makeing sure that everything is working as expected
 
     @BeforeMethod
     public void setup() {
