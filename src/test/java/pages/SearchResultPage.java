@@ -19,6 +19,7 @@ public class SearchResultPage extends Form {
     private final ILabel locationTextLondon = elementFactory.getLabel(LOCATION_FROM_SEARCH_RESULT_LONDON, "Choosing london from list");
     private final String IFRAME_ID = "google_ads_iframe_/6581/web/asi/interstitial/admin/search_0";
     //*[@id='google_ads_iframe_/6581/web/asi/interstitial/admin/search_0']
+    //*[@id="google_ads_iframe_/6581/web/gb/interstitial/news_info/country_home_0"]
     private final By POPUP_DISMISS = By.xpath("//*[@id='dismiss-button']");
     private final IButton dismissBtn = elementFactory.getButton(POPUP_DISMISS, "Dismiss popup button");
 

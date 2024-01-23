@@ -41,6 +41,7 @@ public class TestCaseRecentLocation {
     public void clickRecentLocation() {
         step("Clicking on the recent city location");
         mainPage.recentLocation();
+//        mainPage.clickPopupDismissBtn();
         step("Verify if the actual and expected recent location are same");
         Assert.assertEquals(weatherLocationPage.actualRecentLocation(), SettingsTestData.getExpectedLocationData().getExpectedRecentLocation(), "Location is not same");
     }
