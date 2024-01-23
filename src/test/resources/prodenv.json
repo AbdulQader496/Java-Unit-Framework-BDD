@@ -1,0 +1,5 @@
+{
+  "protocol": "https",
+  "domain": "www.accuweather.com",
+  "wait": 10
+}
