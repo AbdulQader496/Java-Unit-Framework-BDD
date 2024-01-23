@@ -29,12 +29,12 @@ public class SearchResultPage extends Form {
     }
 
     public void clickLocation() {
-        AqualityServices.getBrowser().setImplicitWaitTimeout(Duration.ofSeconds(15));
+        locationText.state().waitForClickable(Duration.ofSeconds(10));
         locationText.click();
     }
 
     public void clickLocationLondon() {
-        AqualityServices.getBrowser().setImplicitWaitTimeout(Duration.ofSeconds(15));
+        locationTextLondon.state().waitForClickable(Duration.ofSeconds(10));
         locationTextLondon.click();
     }
 
