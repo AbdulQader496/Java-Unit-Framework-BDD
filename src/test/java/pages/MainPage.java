@@ -15,7 +15,7 @@ public class MainPage extends Form {
     private IElementFactory elementFactory = AqualityServices.getElementFactory();
     private final By CONSENT_AGREE = By.xpath(String.format(LocatorConstants.PARTICULAR_CLASS_XPATH, "policy-accept"));
     private final By INPUT_TEXT = By.xpath("//*[@class='search-input']");
-    private final By RECENT_LOCATION = By.xpath("//*[@class='recent-location-item featured-location  ']");
+    private final By RECENT_LOCATION = By.xpath(String.format(LocatorConstants.PARTICULAR_CLASS_XPATH, "featured-location  "));
 
     //*[@class='recent-location-item featured-location  ']
     //*[@id="google_ads_iframe_/6581/web/gb/interstitial/news_info/country_home_0"]
