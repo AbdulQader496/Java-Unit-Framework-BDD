@@ -46,7 +46,7 @@ public class TestCaseRecentLocation {
     public void clickRecentLocation() {
         step("Clicking on the recent city location");
         mainPage.recentLocation();
-        mainPage.clickPopupDismissBtn();
+//        mainPage.clickPopupDismissBtn();
     }
 
     @Then("City weather page header contains city name from the Recent search")
