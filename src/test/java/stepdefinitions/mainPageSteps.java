@@ -9,7 +9,7 @@ public class mainPageSteps {
 
     private MainPage mainPage = new MainPage();
 
-    @Given("I go to the Main Page and I Consent data usage")
+    @Given("I Consent to data usage")
     public void FinalTask() {
         step("Consent to data usage");
         mainPage.clickConsentBtn();

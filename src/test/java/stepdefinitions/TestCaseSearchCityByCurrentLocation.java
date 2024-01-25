@@ -12,13 +12,18 @@ public class TestCaseSearchCityByCurrentLocation {
 
     private MainPage mainPage = new MainPage();
 
-    @When("I click on the search text box")
+    @When("I click on the search field")
     public void clickOnSearchTextBox() {
         step("Clicking on the search field");
         mainPage.clickSearchBox();
     }
 
-    @Then("I will see the use you current location option")
+    @Then("Search results list is displayed")
+    public void verifySearchResultDisplayed() {
+        Assert.assertTrue(mainPage.isSearchCurrentLocationOptionDisplayed(), "Option is not displayed");
+    }
+
+    @Then("Use your current location label is displayed")
     public void verifyUseCurrentLocationOption() {
         step(" verify if the option is right");
         mainPage.useCurrentLocationOption();

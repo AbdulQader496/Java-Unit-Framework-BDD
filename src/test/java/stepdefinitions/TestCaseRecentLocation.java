@@ -4,6 +4,7 @@ import aquality.selenium.browser.AqualityServices;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import pages.MainPage;
 import pages.SearchResultPage;
@@ -18,31 +19,39 @@ public class TestCaseRecentLocation {
     private WeatherLocationPage weatherLocationPage = new WeatherLocationPage();
 
     @When("I Enter {string} in search text box")
-    public void enterCityName(String city) {
+    public String enterCityName(String city) {
         step("enter the city name");
         mainPage.inputText(city);
+        return city;
     }
 
-    @Then("I choose the location from the list and the weather of London is displayed")
+    @When("I Click on the first result")
     public void clickLocation() {
         step("Choosing the city from the list");
-        searchResultPage.clickLocationLondon();
+        mainPage.selectLocation();
     }
 
     @And("I go back to Main page")
     public void goToMainPage() {
-        step("going to previous page");
-        AqualityServices.getBrowser().goBack();
-        step("going to previous page");
-        AqualityServices.getBrowser().goBack();
+        step("going to main page");
+        weatherLocationPage.toMainPage();
     }
 
-    @When("I choose the first city in the Recent location and the weather is displayed")
+    @Then("main page is displayed")
+    public void verifyMAinPage() {
+        Assert.assertTrue(mainPage.isHomePage(),"You are not in home page");
+    }
+
+    @When("I choose the first city in the Recent location")
     public void clickRecentLocation() {
         step("Clicking on the recent city location");
         mainPage.recentLocation();
-//        mainPage.clickPopupDismissBtn();
+        mainPage.clickPopupDismissBtn();
+    }
+
+    @Then("City weather page header contains city name from the Recent search")
+    public void verifyLocation() {
         step("Verify if the actual and expected recent location are same");
-        Assert.assertEquals(weatherLocationPage.actualRecentLocation(), SettingsTestData.getExpectedLocationData().getExpectedRecentLocation(), "Location is not same");
+        Assert.assertEquals(weatherLocationPage.actualLocation(), SettingsTestData.getExpectedLocationData().getExpectedRecentLocation(), "Location is not same");
     }
 }
